@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 import "./App.css";
+import FunctionContextComponent from "./context_demo/FunctionContextComponent";
+import { ThemeProvider } from "./context_demo/ThemeContext";
 import UseEffect_demo from "./UseEffect_demo";
 import UseRef_demo from "./UseRef_demo";
 
@@ -61,6 +63,14 @@ function App() {
       <button onClick={incrementCount}>+</button>
       <UseEffect_demo />
       <UseRef_demo />
+
+      {/*notes on context
+      we have our theme provider  that wraps all the logic for handling /updating
+      our state and pushing out the different values to all of our children 
+       look in themeContect component for more notes on this*/}
+      <ThemeProvider>
+        <FunctionContextComponent />
+      </ThemeProvider>
     </>
   );
 }
