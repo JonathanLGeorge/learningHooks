@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import "./App.css";
 import UseEffect_demo from "./UseEffect_demo";
+import UseRef_demo from "./UseRef_demo";
 
 function App() {
   // [current state, update current state]
@@ -59,6 +60,7 @@ function App() {
       <span>{counter}</span>
       <button onClick={incrementCount}>+</button>
       <UseEffect_demo />
+      <UseRef_demo />
     </>
   );
 }
