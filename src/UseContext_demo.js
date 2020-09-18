@@ -1,4 +1,4 @@
-import React, { useSate } from "react";
+import React, { useState } from "react";
 import ClassContextComponent from "./context_demo/ClassContextComponent";
 import FunctionContextComponent from "./context_demo/FunctionContextComponent";
 
