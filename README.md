@@ -1,3 +1,8 @@
+This project is really just a bunch of notes and small demos to learn hooks. 
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
