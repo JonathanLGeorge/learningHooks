@@ -4,6 +4,7 @@ import "./App.css";
 import FunctionContextComponent from "./context_demo/FunctionContextComponent";
 import { ThemeProvider } from "./context_demo/ThemeContext";
 import Draggable from "./draggable/Draggable";
+import SongList from "./forms/SongList";
 import UseEffect_demo from "./UseEffect_demo";
 import UseRef_demo from "./UseRef_demo";
 
@@ -73,6 +74,8 @@ function App() {
         <FunctionContextComponent />
       </ThemeProvider>
       <Draggable />
+      <br />
+      <SongList />
     </>
   );
 }
