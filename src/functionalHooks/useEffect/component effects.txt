@@ -1,0 +1,40 @@
+The Effect Hook
+Function Component Effects
+
+Let’s break down how our PageTitle() function component is using the Effect Hook to execute some code after each render!
+
+import React, { useState, useEffect } from 'react';
+ 
+function PageTitle() {
+  const [name, setName] = useState('');
+ 
+  useEffect(() => {
+    document.title = `Hi, ${name}`;
+  });
+ 
+  return (
+    <div>
+      <p>Use the input field below to rename this page!</p>
+      <input onChange={({target}) => setName(target.value)} value={name} type='text' />
+    </div>
+  );
+}
+
+First, we import the Effect Hook from the react library, like so:
+
+import { useEffect } from 'react';
+
+The Effect Hook is used to call another function that does something for us so there is nothing returned when we call the useEffect() function.
+
+The first argument passed to the useEffect() function is the callback function that we want React to call after each time this component renders. We will refer to this callback function as our effect.
+
+In our example, the effect is:
+
+() => { document.title = name; }
+
+In our effect, we assign the value of the name variable to the document.title. For more on this syntax, have a look at this explanation of the document’s title property.
+
+Notice how we use the current state inside of our effect. Even though our effect is called after the component renders, we still have access to the variables in the scope of our function component! When React renders our component, it will update the DOM as usual, and then run our effect after the DOM has been updated. This happens for every render, including the first and last one.
+
+
+https://developer.mozilla.org/en-US/docs/Web/API/Document/title
