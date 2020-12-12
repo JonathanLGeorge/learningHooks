@@ -153,3 +153,62 @@ useEffect(() => {
 useEffect(() => {
  alert('called when value of `endpoint` or `id` changes');
 }, [endpoint, id]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Let’s define a component that uses:
+
+    an event listener on the document element to track mouse position
+    a network request to fetch JSON data from a server
+    state to track both of these values between renders
+
+Use state and effect hooks managing the position data,
+then another state hook and effects hook for managing the json data
+
+////////////////////////
+Complete the code below to react to 'mousedown' events on the document element.
+
+function DocumentClicks() {
+  const [clicks, setClicks] = useState(0);
+  const increment = () => setClicks((prev) => prev + 1);
+  useEffect(() => {
+    
+      document.addEventListener('mousedown,' increment);
+      return () => document.removeEventListener('mousedown', increment);
+  }, []);
+
+  return <span>{clicks}</span>;
+}
+
+
+its optional to have cleanupfunction and dependecy array when using effect hooks
+
+
+
+
+function Counter({ initialCount }) {
+ const [count, setCount] = useState(initialCount);
+ const increment = () => {
+    setCount(prevCount => prevCount + 1);
+ }
+ return (
+   <>
+     Count: {count}
+     <button onClick={increment}>+</button>
+   </>
+ );
+}

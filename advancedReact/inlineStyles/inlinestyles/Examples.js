@@ -20,3 +20,15 @@ Defining a variable named style in the top-level scope would be an extremely bad
 Remember that every file is invisible to every other file, except for what you choose to expose via module.exports. You could have 100 different files, all with global variables named style, and there could be no conflicts.
 
  */
+import React from "react";
+
+const styles = {
+  color: "darkcyan",
+  background: "mintcream",
+};
+
+export class StyledClass extends React.Component {
+  render() {
+    return <h1 style={styles}>Hello world</h1>;
+  }
+}
